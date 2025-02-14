@@ -96,19 +96,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CustomerRegistration.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="CustomerRegistration.aspx.cs">
+      <DependentUpon>CustomerRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerRegistration.aspx.designer.cs">
+      <DependentUpon>CustomerRegistration.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202502122000383_InitialCreate.cs" />
     <Compile Include="Migrations\202502122000383_InitialCreate.Designer.cs">
       <DependentUpon>202502122000383_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502130752075_UpdateCustomerTable.cs" />
+    <Compile Include="Migrations\202502130752075_UpdateCustomerTable.Designer.cs">
+      <DependentUpon>202502130752075_UpdateCustomerTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
@@ -117,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -130,6 +142,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202502122000383_InitialCreate.resx">
       <DependentUpon>202502122000383_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502130752075_UpdateCustomerTable.resx">
+      <DependentUpon>202502130752075_UpdateCustomerTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

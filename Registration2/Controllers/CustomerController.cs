@@ -72,6 +72,7 @@ namespace Registration2.Controllers
 
         // POST: api/Customer
         [ResponseType(typeof(Customer))]
+        [ResponseType(typeof(Customer))]
         public IHttpActionResult PostCustomer(Customer customer)
         {
             if (!ModelState.IsValid)
@@ -79,11 +80,18 @@ namespace Registration2.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Customers.Add(customer);
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = customer.CustomerID }, customer);
+            try
+            {
+                db.Customers.Add(customer);
+                db.SaveChanges();
+                return CreatedAtRoute("DefaultApi", new { id = customer.CustomerID }, customer);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
+
 
         // DELETE: api/Customer/5
         [ResponseType(typeof(Customer))]

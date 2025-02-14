@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Registration2.Models
 {
     public class Customer
     {
         [Key] // Primary Key
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CustomerID { get; set; }
 
         [Required]
