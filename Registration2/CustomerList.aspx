@@ -21,6 +21,7 @@
                         OnRowEditing="gvCustomerDetails_RowEditing"
                         OnRowCancelingEdit="gvCustomerDetails_RowCancelingEdit"
                         OnRowUpdating="gvCustomerDetails_RowUpdating"
+                        OnRowDeleting="gvCustomerDetails_RowDeleting"
                         DataKeyNames="CustomerID">
                         <Columns>
                             <asp:BoundField DataField="CustomerID" HeaderText="Customer ID" ReadOnly="True" />
@@ -124,7 +125,7 @@
                                 </EditItemTemplate>
                             </asp:TemplateField>
 
-                            <asp:CommandField ShowEditButton="True" ShowCancelButton="True" />
+                            <asp:CommandField ShowEditButton="True" ShowCancelButton="True" ShowDeleteButton="True" />
                         </Columns>
                     </asp:GridView>
                 </ContentTemplate>

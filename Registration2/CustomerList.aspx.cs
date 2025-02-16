@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 using Newtonsoft.Json;
 using Registration2.Models; // Ensure this matches the namespace of your Customer class
@@ -134,6 +135,39 @@ namespace Registration2
                     DisplayError("Update failed.");
                 }
             }
+        }
+
+        protected async void gvCustomerDetails_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+
+            int customerId = Convert.ToInt32(gvCustomerDetails.DataKeys[e.RowIndex].Value);
+
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(apiUrl);
+                HttpResponseMessage response = await client.DeleteAsync(customerId.ToString());
+
+                if (response.IsSuccessStatusCode)
+                {
+                    ShowMessage("Customer deleted successfully.");
+
+                    gvCustomerDetails.EditIndex = -1;
+                    gvCustomerDetails.Visible = false; // Hide the table if no records are left
+                }
+                else
+                {
+                    ShowMessage("Failed to delete");
+
+                }
+            }
+
+           
+        }
+
+        private void ShowMessage(string message)
+        {
+            ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", $"alert('{message}');", true);
         }
 
         protected void btnBackToRegistration_Click(object sender, EventArgs e)

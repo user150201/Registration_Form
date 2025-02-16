@@ -61,18 +61,19 @@
         <h2 class="full-width" style="text-align: center;">Customer Registration</h2>
 
         <div>
-    <label for="customerID">Customer ID <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="customerID" ErrorMessage="Enter Customer id" ForeColor="Red"></asp:RequiredFieldValidator>
+    <label for="customerID">Customer ID <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="customerID" ErrorMessage="Enter Customer id" ForeColor="Red" Font-Size="Small"></asp:RequiredFieldValidator>
             </label>
     &nbsp;<asp:TextBox ID="customerID" runat="server" ></asp:TextBox>
 </div>
 
         <div>
-            <label for="name">Full Name</label>
-            <asp:TextBox ID="name" runat="server" ></asp:TextBox>
+            <label for="name">Full Name <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="name" Display="Dynamic" ErrorMessage="Enter Name" ForeColor="Red" Font-Size="Small"></asp:RequiredFieldValidator>
+            </label>
+            &nbsp;<asp:TextBox ID="name" runat="server" placeholder="Full Name"></asp:TextBox>
         </div>
         <div>
             <label for="dob">Date of Birth</label>
-            <asp:TextBox ID="dob" runat="server" TextMode="Date" ></asp:TextBox>
+            <asp:TextBox ID="dob" runat="server" TextMode="Date"  ></asp:TextBox>
         </div>
 
         <div>
@@ -86,13 +87,14 @@
         </div>
 
         <div>
-            <label for="contact">Contact Number</label>
-            <asp:TextBox ID="contact" runat="server" ></asp:TextBox>
+            <label for="contact">Contact Number <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Enter valid number" ValidationExpression="^\d{10}$" ControlToValidate="contact" Font-Size="Small" ForeColor="Red"></asp:RegularExpressionValidator>
+            </label>
+            &nbsp;<asp:TextBox ID="contact" runat="server" ></asp:TextBox>
         </div>
         <div>
-            <label for="email">Email <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="email" ErrorMessage="Enter valid email address" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+            <label for="email">Email <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="email" ErrorMessage="Enter valid email address" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Font-Size="Small"></asp:RegularExpressionValidator>
             </label>
-            &nbsp;<asp:TextBox ID="email" runat="server" ></asp:TextBox>
+            &nbsp;<asp:TextBox ID="email" runat="server" placeholder="example@gmail.com" ></asp:TextBox>
         </div>
 
         <div>
