@@ -96,6 +96,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CustomerList.aspx" />
     <Content Include="CustomerRegistration.aspx" />
     <Content Include="Global.asax" />
   </ItemGroup>
@@ -103,6 +104,13 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="CustomerList.aspx.cs">
+      <DependentUpon>CustomerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerList.aspx.designer.cs">
+      <DependentUpon>CustomerList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CustomerRegistration.aspx.cs">
       <DependentUpon>CustomerRegistration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

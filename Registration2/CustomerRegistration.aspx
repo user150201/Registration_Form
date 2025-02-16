@@ -5,6 +5,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <title>Customer Registration</title>
     <style>
         body {
@@ -59,22 +61,23 @@
         <h2 class="full-width" style="text-align: center;">Customer Registration</h2>
 
         <div>
-    <label for="customerID">Customer ID</label>
-    <asp:TextBox ID="customerID" runat="server" required></asp:TextBox>
+    <label for="customerID">Customer ID <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="customerID" ErrorMessage="Enter Customer id" ForeColor="Red"></asp:RequiredFieldValidator>
+            </label>
+    &nbsp;<asp:TextBox ID="customerID" runat="server" ></asp:TextBox>
 </div>
 
         <div>
             <label for="name">Full Name</label>
-            <asp:TextBox ID="name" runat="server" required></asp:TextBox>
+            <asp:TextBox ID="name" runat="server" ></asp:TextBox>
         </div>
         <div>
             <label for="dob">Date of Birth</label>
-            <asp:TextBox ID="dob" runat="server" TextMode="Date" required></asp:TextBox>
+            <asp:TextBox ID="dob" runat="server" TextMode="Date" ></asp:TextBox>
         </div>
 
         <div>
             <label for="gender">Gender</label>
-            <asp:DropDownList ID="gender" runat="server" required>
+            <asp:DropDownList ID="gender" runat="server" >
                 <asp:ListItem Value="">Select</asp:ListItem>
                 <asp:ListItem Value="Male">Male</asp:ListItem>
                 <asp:ListItem Value="Female">Female</asp:ListItem>
@@ -84,16 +87,17 @@
 
         <div>
             <label for="contact">Contact Number</label>
-            <asp:TextBox ID="contact" runat="server" required></asp:TextBox>
+            <asp:TextBox ID="contact" runat="server" ></asp:TextBox>
         </div>
         <div>
-            <label for="email">Email</label>
-            <asp:TextBox ID="email" runat="server" required></asp:TextBox>
+            <label for="email">Email <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="email" ErrorMessage="Enter valid email address" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+            </label>
+            &nbsp;<asp:TextBox ID="email" runat="server" ></asp:TextBox>
         </div>
 
         <div>
               <label for="employment">Employment</label>
-    <asp:DropDownList ID="employment" runat="server" required>
+    <asp:DropDownList ID="employment" runat="server" >
         <asp:ListItem Value="">Select</asp:ListItem>
         <asp:ListItem Value="Software Engineer">Software Engineer</asp:ListItem>
         <asp:ListItem Value="Data Analyst">Data Analyst</asp:ListItem>
@@ -105,21 +109,21 @@
 
         <div class="full-width">
             <label for="address">Address</label>
-            <asp:TextBox ID="address" runat="server" TextMode="MultiLine" required></asp:TextBox>
+            <asp:TextBox ID="address" runat="server" TextMode="MultiLine" ></asp:TextBox>
         </div>
 
         <div>
             <label for="city">City</label>
-            <asp:TextBox ID="city" runat="server" required></asp:TextBox>
+            <asp:TextBox ID="city" runat="server" ></asp:TextBox>
         </div>
         <div>
             <label for="state">State</label>
-            <asp:TextBox ID="state" runat="server" required></asp:TextBox>
+            <asp:TextBox ID="state" runat="server" ></asp:TextBox>
         </div>
 
         <div>
             <label for="country">Country</label>
-            <asp:DropDownList ID="country" runat="server" required>
+            <asp:DropDownList ID="country" runat="server" >
                 <asp:ListItem Value="">Select</asp:ListItem>
                 <asp:ListItem Value="USA">United States</asp:ListItem>
                 <asp:ListItem Value="Canada">Canada</asp:ListItem>
@@ -129,11 +133,13 @@
 
         <div>
             <label for="zipcode">Zip Code</label>
-            <asp:TextBox ID="zipcode" runat="server" required></asp:TextBox>
+            <asp:TextBox ID="zipcode" runat="server" ></asp:TextBox>
         </div>
 
         <div class="full-width">
 <asp:Button ID="btnSubmit" runat="server" Text="Register" CssClass="button" OnClick="btnSubmit_Click" />
+            <asp:Button ID="btnNavigate" runat="server" Text="View" OnClick="btnNavigate_Click" CausesValidation="false"/>
+
         </div>
     </form>
 </body>

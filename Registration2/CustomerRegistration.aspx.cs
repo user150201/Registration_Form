@@ -35,7 +35,7 @@ namespace Registration2
         {
             try
             {
-                // Ignore SSL certificate validation (for local development only)
+                
                 ServicePointManager.ServerCertificateValidationCallback =
                     (sender, cert, chain, sslPolicyErrors) => true;
 
@@ -90,6 +90,9 @@ namespace Registration2
             }
         }
 
-
+        protected void btnNavigate_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CustomerList.aspx");
+        }
     }
 }
