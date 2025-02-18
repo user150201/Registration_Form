@@ -106,6 +106,7 @@
         <asp:ListItem Value="Project Manager">Project Manager</asp:ListItem>
         <asp:ListItem Value="Designer">Designer</asp:ListItem>
         <asp:ListItem Value="Teacher">Teacher</asp:ListItem>
+        <asp:ListItem Value="Other">Other</asp:ListItem>
     </asp:DropDownList>
         </div>
 

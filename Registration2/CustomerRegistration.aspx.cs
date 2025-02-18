@@ -12,6 +12,7 @@ using System.Web.UI;
 using System.Xml.Linq;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
+using System.Web.Services.Description;
 
 
 
@@ -75,11 +76,11 @@ namespace Registration2
 
                     if (response.IsSuccessStatusCode)
                     {
-                        ScriptManager.RegisterStartupScript(this, GetType(), "alert", "alert('Customer registered successfully!');", true);
+                        ScriptManager.RegisterStartupScript(this, GetType(), "alertMessage", $"alert('{"Customer Registered Successfully!"}');", true);
                     }
                     else
                     {
-                        ScriptManager.RegisterStartupScript(this, GetType(), "alert", $"alert('Error: {responseContent}');", true);
+                        ScriptManager.RegisterStartupScript(this, GetType(), "alert", $"alert('Error: {"Registration Failed"}');", true);
                     }
                 }
             }
