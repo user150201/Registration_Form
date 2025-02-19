@@ -106,6 +106,7 @@
         <asp:ListItem Value="Project Manager">Project Manager</asp:ListItem>
         <asp:ListItem Value="Designer">Designer</asp:ListItem>
         <asp:ListItem Value="Teacher">Teacher</asp:ListItem>
+        <asp:ListItem Value="Journalist">Journalist</asp:ListItem>
         <asp:ListItem Value="Other">Other</asp:ListItem>
     </asp:DropDownList>
         </div>
@@ -131,6 +132,10 @@
                 <asp:ListItem Value="USA">United States</asp:ListItem>
                 <asp:ListItem Value="Canada">Canada</asp:ListItem>
                 <asp:ListItem Value="India">India</asp:ListItem>
+                <asp:ListItem Value="England">England</asp:ListItem>
+                <asp:ListItem Value="Australia">Australia</asp:ListItem>
+                <asp:ListItem Value="Scotland">Scotland</asp:ListItem>
+                <asp:ListItem Value="Pakistan">Pakistan</asp:ListItem>
             </asp:DropDownList>
         </div>
 
